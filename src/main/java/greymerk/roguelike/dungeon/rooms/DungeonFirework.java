@@ -67,20 +67,24 @@ public class DungeonFirework extends DungeonBase {
 		end.add(orth[1], 2);
 		editor.fillRectSolid(rand, start, end, breadboard, true, true);
 		
-		cursor = new Coord(x, y, z);
-		cursor.add(orth[0], 2);
-		
-		launcher(editor, rand, dir, cursor);
-		cursor.add(orth[1], 2);
-		launcher(editor, rand, dir, cursor);
-		cursor.add(orth[1], 2);
-		launcher(editor, rand, dir, cursor);
-		cursor.add(dir, 6);
-		launcher(editor, rand, dir, cursor);
-		cursor.add(orth[0], 2);
-		launcher(editor, rand, dir, cursor);
-		cursor.add(orth[0], 2);
-		launcher(editor, rand, dir, cursor);
+        try {
+            cursor = new Coord(x, y, z);
+            cursor.add(orth[0], 2);
+            
+            launcher(editor, rand, dir, cursor);
+            cursor.add(orth[1], 2);
+            launcher(editor, rand, dir, cursor);
+            cursor.add(orth[1], 2);
+            launcher(editor, rand, dir, cursor);
+            cursor.add(dir, 6);
+            launcher(editor, rand, dir, cursor);
+            cursor.add(orth[0], 2);
+            launcher(editor, rand, dir, cursor);
+            cursor.add(orth[0], 2);
+            launcher(editor, rand, dir, cursor);
+        } catch (NullPointerException npe) {
+            // meh
+        }
 		
 		start = new Coord(x, y, z);
 		start.add(dir, 4);
